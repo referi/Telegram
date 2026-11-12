@@ -9126,11 +9126,9 @@ public class LoginActivity extends BaseFragment implements NotificationCenter.No
         if (proxyEnabled) {
             proxyDrawable.setConnected(true, connected, animated);
             showProxyButton(true, animated);
-        } else if (getMessagesController().blockedCountry && !SharedConfig.proxyList.isEmpty() || connecting) {
-            proxyDrawable.setConnected(true, connected, animated);
-            showProxyButtonDelayed();
         } else {
-            showProxyButton(false, animated);
+            proxyDrawable.setConnected(false, false, animated);
+            showProxyButton(true, animated);
         }
     }
     
